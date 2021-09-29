@@ -20,7 +20,6 @@ $Triggers += $EventTrigger
 $Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -DontStopOnIdleEnd -StartWhenAvailable
 Register-ScheduledTask -Action $Action -Principal $Principal -Trigger $Triggers -Settings $Settings -TaskName $TaskName -Description $TaskDescription -Force
 
-Write-Log -Message "Creating scheduled task 2/2..." -LogType CMTrace
 $Triggers = @()
 $TaskName = "WiFi Reconnection"
 $TaskDescription = "This task will power cycle the WiFi radio in the event a user intentionally disconnects from specified SSID. In turn, the client will reconnect to preferred network (per auto-connect in the WiFi profile)."
